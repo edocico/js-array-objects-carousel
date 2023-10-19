@@ -49,6 +49,8 @@ const startDOMElement = document.querySelector('.start-btn')
 
 const stopDOMElement = document.querySelector('.stop-btn')
 
+const invertDOMElement = document.querySelector('.invert-btn')
+
 // ciclo l'array di oggetti
 
 images.forEach((figure, index) => {

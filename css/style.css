@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid black;
+    background-color: #CCCCCC;
+}
+
+.app-main {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.photo-section {
+    flex-grow: 1;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    background-color: whitesmoke;
+    overflow: auto;
+   
+}
+
+.side-bar {
+    border-left: 1px solid black;
+    width: 250px;
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+img {
+    max-width: 400px;
+    display: block;
+}
+
+.left-arrow {
+    align-self: flex-start;
+    font-size: 40px;
+    
+}
+
+.right-arrow {
+    align-self: flex-start;
+    font-size: 40px;
+   
+}
+
+.left-arrow:hover {
+    background-color: lightgrey;
+    line-height: 2em;
+    border-radius: 100%;
+    padding: 0 20px;
+}
+
+.right-arrow:hover {
+    background-color: lightgrey;
+    line-height: 2em;
+    border-radius: 100%;
+    padding: 0 20px;
+}
+
+.img-box {
+    box-shadow: 5px 5px 5px black;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
+.image {
+    object-fit: cover;
+    aspect-ratio: 16/10;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.thumbnail-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 20px;
+}
+
+.thumb-img {
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+}
+
+.figure-box {
+    position: relative;
+}
+
+.box-shadow {
+    box-shadow: 5px 5px 5px black;
+}

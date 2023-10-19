@@ -45,6 +45,10 @@ const imgBoxDOMElement = document.querySelector('.img-box')
 const thumbBoxDOMElement = document.querySelector('.thumbnail-box')
 //console.log(thumbBoxDOMElement)
 
+const startDOMElement = document.querySelector('.start-btn')
+
+const stopDOMElement = document.querySelector('.stop-btn')
+
 // ciclo l'array di oggetti
 
 images.forEach((figure, index) => {
@@ -127,4 +131,28 @@ leftArrowDOMElement.addEventListener('click', function() {
     tBoxDOMElement[imageCounter].classList.add('box-shadow')
 
 })
+
+// funzione autoplay
+
+const forwardAutoPlay = setInterval(autoPlay, 3000);
+
+function autoPlay() {
+    fBoxDOMElement[imageCounter].classList.add('d-none')
+    //aggiungo l'overlay dal thumbnail nella sidebar
+    overThumbDOMElement[imageCounter].classList.remove('d-none')
+    tBoxDOMElement[imageCounter].classList.remove('box-shadow')
+    //incremento il contatore
+    imageCounter++
+    // se il contatore è maggiore o uguale al numero di elementi del carosello allora il counter torna al valore zero 
+    if (imageCounter >= fBoxDOMElement.length) {
+        imageCounter = 0
+    }
+    //faccio apparire a schermo l'immagine successiva
+    fBoxDOMElement[imageCounter].classList.remove('d-none')
+    
+    //rimuovo l'overlay dalla thumbnail successiva
+    overThumbDOMElement[imageCounter].classList.add('d-none')
+    tBoxDOMElement[imageCounter].classList.add('box-shadow')
+    
+}
     

@@ -44,3 +44,23 @@ const imgBoxDOMElement = document.querySelector('.img-box')
 
 const thumbBoxDOMElement = document.querySelector('.thumbnail-box')
 //console.log(thumbBoxDOMElement)
+
+// ciclo l'array di oggetti
+
+images.forEach((figure, index) => {
+    //console.log(figure, index)
+    const mainHtmlString = `<figure class="figure-box">
+                                <img class="thumb-img" src="./${figure.image}">
+                                <div class="figure-text">
+                                    <h3 class="figure-title">${figure.title}</h3>
+                                    <p class="figure-par">${figure.text}</h3>
+                                </div>
+                                <div class="overlay"></div>
+                            </figure>`
+    
+    const thumbHtmlString = `<img class="thumb-img" src="./${figure.image}">`
+
+    imgBoxDOMElement.innerHTML += mainHtmlString
+    thumbBoxDOMElement.innerHTML += thumbHtmlString
+})
+    

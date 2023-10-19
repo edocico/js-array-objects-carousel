@@ -129,3 +129,19 @@ img {
 .box-shadow {
     box-shadow: 5px 5px 5px black;
 }
+
+.figure-text {
+    position: absolute;
+    top: 660px;
+    left: 20px;
+    color: white;
+    line-height: 2em;
+}
+
+.figure-title {
+    font-size: 26px;
+}
+
+.figure-par {
+    font-size: 20px;
+}

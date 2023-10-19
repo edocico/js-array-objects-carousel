@@ -135,18 +135,31 @@ leftArrowDOMElement.addEventListener('click', function() {
 
 })
 // dichiaro una variabile con scope globale
-let forwardAutoPlay
+let scrollAutoPlay
 
 // autoplay function sullo start button
 startDOMElement.addEventListener('click', function() {
-     forwardAutoPlay = setInterval(autoPlay, 3000);
+     scrollAutoPlay = setInterval(autoPlay, 3000);
     
 })
 
 // stop autoplay
 stopDOMElement.addEventListener('click', function() {
-    clearInterval(forwardAutoPlay)
-})  
+    clearInterval(scrollAutoPlay)
+})
+
+// invert autoplay
+
+invertDOMElement.addEventListener('click', function() {
+    if (scrollAutoPlay = setInterval(autoPlay, 3000)) {
+        clearInterval(scrollAutoPlay)
+        scrollAutoPlay = setInterval(revAutoPlay, 3000)
+    } else if (scrollAutoPlay = setInterval(revAutoPlay, 3000)) {
+        clearInterval(scrollAutoPlay)
+        scrollAutoPlay = setInterval(autoPlay, 3000)
+    }
+})
+
 
 // funzione autoplay
 
@@ -162,6 +175,27 @@ function autoPlay() {
         imageCounter = 0
     }
     
+    fBoxDOMElement[imageCounter].classList.remove('d-none')
+    
+    
+    overThumbDOMElement[imageCounter].classList.add('d-none')
+    tBoxDOMElement[imageCounter].classList.add('box-shadow')
+    
+}
+
+function revAutoPlay() {
+    fBoxDOMElement[imageCounter].classList.add('d-none')
+    
+    overThumbDOMElement[imageCounter].classList.remove('d-none')
+    
+    tBoxDOMElement[imageCounter].classList.remove('box-shadow')
+    
+    imageCounter--
+    
+    if (imageCounter < 0) {
+        imageCounter = fBoxDOMElement.length - 1
+    }
+   
     fBoxDOMElement[imageCounter].classList.remove('d-none')
     
     

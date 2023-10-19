@@ -132,10 +132,11 @@ h1 {
 
 .figure-text {
     position: absolute;
-    top: 480px;
+    top: 460px;
     left: 20px;
     color: white;
     line-height: 2em;
+    text-shadow: 2px 2px 4px black;
 }
 
 .figure-title {

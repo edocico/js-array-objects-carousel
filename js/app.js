@@ -80,6 +80,7 @@ const tBoxDOMElement = document.querySelectorAll('.t-box')
 fBoxDOMElement[0].classList.remove('d-none')
 
 overThumbDOMElement[0].classList.add('d-none')
+tBoxDOMElement[0].classList.add('box-shadow')
 
 
 let imageCounter = 0
@@ -131,26 +132,37 @@ leftArrowDOMElement.addEventListener('click', function() {
     tBoxDOMElement[imageCounter].classList.add('box-shadow')
 
 })
+// dichiaro una variabile con scope globale
+let forwardAutoPlay
+
+// autoplay function sullo start button
+startDOMElement.addEventListener('click', function() {
+     forwardAutoPlay = setInterval(autoPlay, 3000);
+    
+})
+
+// stop autoplay
+stopDOMElement.addEventListener('click', function() {
+    clearInterval(forwardAutoPlay)
+})  
 
 // funzione autoplay
 
-const forwardAutoPlay = setInterval(autoPlay, 3000);
-
 function autoPlay() {
     fBoxDOMElement[imageCounter].classList.add('d-none')
-    //aggiungo l'overlay dal thumbnail nella sidebar
+    
     overThumbDOMElement[imageCounter].classList.remove('d-none')
     tBoxDOMElement[imageCounter].classList.remove('box-shadow')
-    //incremento il contatore
+    
     imageCounter++
-    // se il contatore è maggiore o uguale al numero di elementi del carosello allora il counter torna al valore zero 
+     
     if (imageCounter >= fBoxDOMElement.length) {
         imageCounter = 0
     }
-    //faccio apparire a schermo l'immagine successiva
+    
     fBoxDOMElement[imageCounter].classList.remove('d-none')
     
-    //rimuovo l'overlay dalla thumbnail successiva
+    
     overThumbDOMElement[imageCounter].classList.add('d-none')
     tBoxDOMElement[imageCounter].classList.add('box-shadow')
     

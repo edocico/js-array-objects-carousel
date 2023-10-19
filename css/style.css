@@ -47,8 +47,8 @@ h1 {
     text-transform: uppercase;
 }
 
-img {
-    max-width: 400px;
+.figure-img {
+    max-width: 600px;
     display: block;
 }
 
@@ -90,9 +90,9 @@ img {
     display: none;
 }
 
-.image {
+.figure-img {
     object-fit: cover;
-    aspect-ratio: 16/10;
+    aspect-ratio: 1;
 }
 
 .container {
@@ -132,7 +132,7 @@ img {
 
 .figure-text {
     position: absolute;
-    top: 660px;
+    top: 480px;
     left: 20px;
     color: white;
     line-height: 2em;
@@ -144,4 +144,8 @@ img {
 
 .figure-par {
     font-size: 20px;
+}
+
+.t-box {
+    position: relative;
 }

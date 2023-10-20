@@ -88,8 +88,8 @@ tBoxDOMElement[0].classList.add('box-shadow')
 let imageCounter = 0
 
 //controllo forward per il carosello 
-rightArrowDOMElement.addEventListener('click', function () {
-    // rimuovo l'immagine presente a schermo
+rightArrowDOMElement.addEventListener('click', autoPlay )
+    /* // rimuovo l'immagine presente a schermo
     fBoxDOMElement[imageCounter].classList.add('d-none')
     //aggiungo l'overlay dal thumbnail nella sidebar
     overThumbDOMElement[imageCounter].classList.remove('d-none')
@@ -106,16 +106,16 @@ rightArrowDOMElement.addEventListener('click', function () {
     //rimuovo l'overlay dalla thumbnail successiva
     overThumbDOMElement[imageCounter].classList.add('d-none')
     tBoxDOMElement[imageCounter].classList.add('box-shadow')
+     */
     
-    
-})
+
 
 
 // controllo backward per il carosello
-leftArrowDOMElement.addEventListener('click', function() {
+leftArrowDOMElement.addEventListener('click', revAutoPlay)
     // rimuovo l'immagine presente a schermo
     
-    fBoxDOMElement[imageCounter].classList.add('d-none')
+    /* fBoxDOMElement[imageCounter].classList.add('d-none')
     // aggiungo l'overlay al thumbnail
     overThumbDOMElement[imageCounter].classList.remove('d-none')
     
@@ -131,9 +131,9 @@ leftArrowDOMElement.addEventListener('click', function() {
     
     // rimuovo l'overlay dall'immagine precedente
     overThumbDOMElement[imageCounter].classList.add('d-none')
-    tBoxDOMElement[imageCounter].classList.add('box-shadow')
+    tBoxDOMElement[imageCounter].classList.add('box-shadow') */
 
-})
+
 // dichiaro una variabile con scope globale
 let scrollAutoPlay
 
@@ -201,6 +201,12 @@ function revAutoPlay() {
     
     overThumbDOMElement[imageCounter].classList.add('d-none')
     tBoxDOMElement[imageCounter].classList.add('box-shadow')
+    
+}
+
+// funzione go to
+
+function goToSlide() {
     
 }
     

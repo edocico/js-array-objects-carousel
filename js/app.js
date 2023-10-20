@@ -78,6 +78,7 @@ const fBoxDOMElement = document.querySelectorAll('.figure-box')
 const overThumbDOMElement = document.querySelectorAll('.overlay')
 
 const tBoxDOMElement = document.querySelectorAll('.t-box')
+console.log(tBoxDOMElement)
 
 fBoxDOMElement[0].classList.remove('d-none')
 
@@ -89,53 +90,15 @@ let imageCounter = 0
 
 //controllo forward per il carosello 
 rightArrowDOMElement.addEventListener('click', autoPlay )
-    /* // rimuovo l'immagine presente a schermo
-    fBoxDOMElement[imageCounter].classList.add('d-none')
-    //aggiungo l'overlay dal thumbnail nella sidebar
-    overThumbDOMElement[imageCounter].classList.remove('d-none')
-    tBoxDOMElement[imageCounter].classList.remove('box-shadow')
-    //incremento il contatore
-    imageCounter++
-    // se il contatore è maggiore o uguale al numero di elementi del carosello allora il counter torna al valore zero 
-    if (imageCounter >= fBoxDOMElement.length) {
-        imageCounter = 0
-    }
-    //faccio apparire a schermo l'immagine successiva
-    fBoxDOMElement[imageCounter].classList.remove('d-none')
-    
-    //rimuovo l'overlay dalla thumbnail successiva
-    overThumbDOMElement[imageCounter].classList.add('d-none')
-    tBoxDOMElement[imageCounter].classList.add('box-shadow')
-     */
-    
-
+   
 
 
 // controllo backward per il carosello
 leftArrowDOMElement.addEventListener('click', revAutoPlay)
-    // rimuovo l'immagine presente a schermo
     
-    /* fBoxDOMElement[imageCounter].classList.add('d-none')
-    // aggiungo l'overlay al thumbnail
-    overThumbDOMElement[imageCounter].classList.remove('d-none')
-    
-    tBoxDOMElement[imageCounter].classList.remove('box-shadow')
-    //decremento il counter
-    imageCounter--
-    // in questo caso se il valore del counter è minore di 0 allora assumerà il valore del numero degli elementi del carosello meno 1
-    if (imageCounter < 0) {
-        imageCounter = fBoxDOMElement.length - 1
-    }
-    // faccio apparire a schermo l'immagine precedente
-    fBoxDOMElement[imageCounter].classList.remove('d-none')
-    
-    // rimuovo l'overlay dall'immagine precedente
-    overThumbDOMElement[imageCounter].classList.add('d-none')
-    tBoxDOMElement[imageCounter].classList.add('box-shadow') */
-
 
 // dichiaro una variabile con scope globale
-let scrollAutoPlay
+let scrollAutoPlay 
 
 // autoplay function sullo start button
 startDOMElement.addEventListener('click', function() {
@@ -161,7 +124,7 @@ invertDOMElement.addEventListener('click', function() {
 })
 
 
-// funzione autoplay
+// funzione avanzamento
 
 function autoPlay() {
     fBoxDOMElement[imageCounter].classList.add('d-none')
@@ -182,6 +145,8 @@ function autoPlay() {
     tBoxDOMElement[imageCounter].classList.add('box-shadow')
     
 }
+
+// funzione di backward slide
 
 function revAutoPlay() {
     fBoxDOMElement[imageCounter].classList.add('d-none')
@@ -204,9 +169,28 @@ function revAutoPlay() {
     
 }
 
+/* // quando entro con il mouse su una slide l'autoplay si interrompe
+fBoxDOMElement.addEventListener('mouseenter', () => {
+    console.log(mouseenter)
+    clearInterval(scrollAutoPlay)
+    scrollAutoPlay = null
+})
+// quando esco con il mouse dalla slide
+fBoxDOMElement.addEventListener('mouseleave', () => {
+    if (!scrollAutoPlay) {
+        scrollAutoPlay = setInterval(autoPlay, 3000)
+    }
+}) */
+
 // funzione go to
 
-function goToSlide() {
-    
+/* function goToSlide() {
+   fBoxDOMElement[imageCounter] 
 }
+
+tBoxDOMElement.forEach((thumb, index) => {
+    thumb.addEventListener('click', function () {
+        goToSlide[index]
+    })
+}) */
     
